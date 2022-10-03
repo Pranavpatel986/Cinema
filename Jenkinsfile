@@ -4,7 +4,7 @@ pipeline
     environment
     {
         AWS_ACCOUNT_ID="359983627261"
-        AWS_DEFAULT_REGION="us-east-2"
+        AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins-pipline-build"
         IMAGE_TAG="latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
@@ -17,6 +17,11 @@ pipeline
     stages
     {
 
+        stage('Cloning Git') {
+                    steps {
+                        checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Pranavpatel986/Cinema.git']]])
+                    }
+                }
         stage('Compile and Clean')
         {
             steps
@@ -40,7 +45,7 @@ pipeline
             {
                 script
                 {
-                  sh 'docker build -t pranavpatel986/Cinema .'
+                  sh 'docker build -t pranavpatel986/NMS_Cinemas .'
                 }
             }
         }

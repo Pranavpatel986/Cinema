@@ -85,6 +85,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>NMS_Cinemas</finalName>
 	</build>
 
 </project>
