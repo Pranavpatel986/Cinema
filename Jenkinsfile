@@ -45,7 +45,7 @@ pipeline
             {
                 script
                 {
-                  sh 'docker build -t pranavpatel986/NMS_Cinemas .'
+                  sh 'docker build -t pranavpatel986/nms_cinemas .'
                 }
             }
         }
