@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 
-ADD target/NMS_Cinemas.jar NNMS_Cinemas.jar
+ADD target/NMS_Cinemas.jar NMS_Cinemas.jar
 
 EXPOSE 8080
 
