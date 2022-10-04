@@ -5,5 +5,5 @@ ADD target/NMS_Cinemas.jar NNMS_Cinemas.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","NMS_Cinemas.jar"]
+ENTRYPOINT ["java","-jar","nms_cinemas.jar"]
 
